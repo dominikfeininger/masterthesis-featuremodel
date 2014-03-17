@@ -5,7 +5,7 @@
 				<or abstract="true" mandatory="true" name="Operating_System">
 					<and abstract="true" mandatory="true" name="Windows_Phone">
 						<and abstract="true" mandatory="true" name="WP_UI_Functionality">
-							<feature name="WP_Report"/>
+							<feature name="WP_Report_Situation"/>
 						</and>
 						<and abstract="true" mandatory="true" name="WP_Core_Functionality">
 							<feature name="WP_Distinguish_Situation"/>

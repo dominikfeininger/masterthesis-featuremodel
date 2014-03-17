@@ -1,55 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-	<featureModel chosenLayoutAlgorithm="4">
+	<featureModel chosenLayoutAlgorithm="0" horizontalLayout="true">
 		<struct>
-			<and abstract="true" mandatory="true" name="Rescuer_Mobile_App">
-				<or abstract="true" mandatory="true" name="Operating_System">
-					<and abstract="true" mandatory="true" name="Google_Android">
-						<feature abstract="true" mandatory="true" name="Android_UI_Functionality"/>
-						<feature abstract="true" mandatory="true" name="Android_Core_Functionality"/>
+			<and abstract="true" coordinates="138, 240" mandatory="true" name="Rescuer_Mobile_App">
+				<or abstract="true" coordinates="278, 75" mandatory="true" name="Operating_System">
+					<and abstract="true" coordinates="413, 51" mandatory="true" name="Google_Android">
+						<and abstract="true" coordinates="545, 18" mandatory="true" name="Android_UI_Functionality">
+							<feature coordinates="730, -4" mandatory="true" name="Android_Adapt_To_User"/>
+							<and abstract="true" coordinates="732, 38" mandatory="true" name="Android_Connections">
+								<feature coordinates="905, 11" name="Android_Call_Help"/>
+								<feature coordinates="905, 38" mandatory="true" name="Android_Report_Situation"/>
+								<feature coordinates="905, 65" mandatory="true" name="Android_Send_Notification"/>
+							</and>
+						</and>
+						<and abstract="true" coordinates="545, 85" mandatory="true" name="Android_Core_Functionality">
+							<feature coordinates="733, 72" name="Android_Distinguish_Situation"/>
+							<feature coordinates="733, 99" mandatory="true" name="Android_getDeviceId"/>
+						</and>
 					</and>
-					<and abstract="true" mandatory="true" name="Apple_iOS">
-						<feature abstract="true" mandatory="true" name="iOS_UI_Functionality">
+					<and abstract="true" coordinates="412, 131" mandatory="true" name="Cell_Phone">
+						<feature coordinates="544, 131" mandatory="true" name="Cell_Send_Notification"/>
+					</and>
+					<and abstract="true" coordinates="413, 213" mandatory="true" name="Apple_iOS">
+						<and abstract="true" coordinates="545, 180" name="iOS_UI_Functionality">
 							<description>
 								
 							</description>
-						</feature>
-						<feature abstract="true" mandatory="true" name="iOS_Core_Functionality"/>
+							<and abstract="true" coordinates="733, 153" mandatory="true" name="iOS_Connections">
+								<feature coordinates="906, 126" name="iOS_Call_Help"/>
+								<feature coordinates="906, 153" mandatory="true" name="iOS_Report_Situation"/>
+								<feature coordinates="906, 180" mandatory="true" name="iOS_Send_Notification"/>
+							</and>
+							<feature coordinates="733, 207" name="iOS_Adapt_To_User"/>
+						</and>
+						<and abstract="true" coordinates="545, 247" mandatory="true" name="iOS_Core_Functionality">
+							<feature coordinates="733, 234" mandatory="true" name="iOS_getDeviceId"/>
+							<feature coordinates="733, 261" name="iOS_Distinguish_Situation"/>
+						</and>
 					</and>
 				</or>
-				<and abstract="true" mandatory="true" name="Core_Application">
-					<or abstract="true" mandatory="true" name="Context_Services">
-						<and abstract="true" mandatory="true" name="Hard_Sensing_Services">
-							<and abstract="true" name="Network_Services">
-								<feature name="Wifi_Service_Outside"/>
-								<feature name="Cellular_Service"/>
-								<feature name="Bluetooth_Service"/>
-							</and>
-							<alt abstract="true" name="Location_Services">
-								<feature mandatory="true" name="GPS"/>
-								<feature mandatory="true" name="Wifi_Service_Inside"/>
-							</alt>
-							<and abstract="true" name="Device_Services">
-								<feature name="Accelerometer_Service"/>
-								<feature name="Gyroscope_Service"/>
-								<feature name="Compass_Service"/>
-								<feature name="Camera_Serviece"/>
-							</and>
+				<and abstract="true" coordinates="278, 423" mandatory="true" name="Core_Application">
+					<and abstract="true" coordinates="412, 289" mandatory="true" name="Business_Logic">
+						<and coordinates="544, 276" mandatory="true" name="Store_Personal_Data">
+							<feature coordinates="637, 276" name="defineAsWorkforce"/>
 						</and>
-						<and abstract="true" mandatory="true" name="Soft_Sensing_Services">
-							<feature name="Calendar_Service"/>
-							<feature name="Contacts_Service"/>
-						</and>
+						<feature coordinates="544, 303" mandatory="true" name="Define_Timeframe_for_Recording"/>
+					</and>
+					<or abstract="true" coordinates="412, 343" name="Persistance">
+						<feature coordinates="544, 330" mandatory="true" name="Database"/>
+						<feature coordinates="544, 357" mandatory="true" name="File_System"/>
 					</or>
-					<or abstract="true" mandatory="true" name="Mobile_Core">
-						<and abstract="true" mandatory="true" name="Network">
-							<feature name="Wifi_Connection"/>
-							<feature name="Data_Connection"/>
+					<and abstract="true" coordinates="413, 471" mandatory="true" name="Context_Services">
+						<and abstract="true" coordinates="545, 385" mandatory="true" name="Hard_Sensing_Services">
+							<and abstract="true" coordinates="733, 308" name="Network_Services">
+								<feature coordinates="906, 288" name="Bluetooth_Service"/>
+								<or coordinates="906, 328" mandatory="true" name="Data_Service">
+									<feature coordinates="1067, 315" mandatory="true" name="Cellular_Service"/>
+									<feature coordinates="1067, 342" mandatory="true" name="Wifi_Service_Outside"/>
+								</or>
+							</and>
+							<or abstract="true" coordinates="733, 382" mandatory="true" name="Location_Services">
+								<and coordinates="906, 369" mandatory="true" name="GPS_Service">
+									<feature coordinates="1067, 369" name="getPosition"/>
+								</and>
+								<and coordinates="906, 396" mandatory="true" name="Wifi_Service_Inside">
+									<feature coordinates="1067, 396" name="getInsidePosition"/>
+								</and>
+							</or>
+							<or abstract="true" coordinates="733, 463" name="Device_Services">
+								<feature coordinates="906, 423" mandatory="true" name="Accelerometer_Service"/>
+								<feature coordinates="906, 450" mandatory="true" name="Gyroscope_Service"/>
+								<feature coordinates="906, 477" mandatory="true" name="Compass_Service"/>
+								<and coordinates="906, 504" mandatory="true" name="Camera_Serviece">
+									<feature coordinates="1067, 504" name="Take_Pictures"/>
+								</and>
+							</or>
 						</and>
-					</or>
-					<feature mandatory="true" name="Business_Logic"/>
-					<and abstract="true" name="Persistance">
-						<feature name="Database"/>
-						<feature name="File_System"/>
+						<and abstract="true" coordinates="545, 520" mandatory="true" name="Soft_Sensing_Services">
+							<feature coordinates="733, 493" name="Calendar_Service"/>
+							<feature coordinates="733, 520" name="Contacts_Service"/>
+							<and abstract="true" coordinates="733, 547" mandatory="true" name="Time_Service">
+								<feature coordinates="906, 547" mandatory="true" name="getTime"/>
+							</and>
+						</and>
+					</and>
+					<and abstract="true" coordinates="411, 639" mandatory="true" name="Mobile_Core">
+						<and abstract="true" coordinates="544, 587" name="Recording">
+							<or abstract="true" coordinates="608, 587" name="Record_Location">
+								<feature coordinates="781, 574" mandatory="true" name="Record_GPS"/>
+								<feature coordinates="781, 601" mandatory="true" name="Record_Wifi"/>
+							</or>
+						</and>
+						<and abstract="true" coordinates="545, 652" mandatory="true" name="Network">
+							<and abstract="true" coordinates="733, 625" mandatory="true" name="Cellular_Coonection">
+								<feature coordinates="906, 612" mandatory="true" name="SMS"/>
+								<feature coordinates="906, 639" name="Call"/>
+							</and>
+							<or coordinates="733, 679" name="Data">
+								<feature coordinates="906, 666" mandatory="true" name="Data_Connection"/>
+								<feature coordinates="906, 693" mandatory="true" name="Wifi_Connection"/>
+							</or>
+						</and>
+						<feature coordinates="545, 681" name="getNotifications"/>
+						<feature coordinates="545, 708" name="RunInBackgroundAbility"/>
 					</and>
 				</and>
 			</and>
