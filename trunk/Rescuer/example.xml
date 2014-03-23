@@ -2,7 +2,7 @@
 	<featureModel chosenLayoutAlgorithm="4">
 		<struct>
 			<and abstract="true" mandatory="true" name="Rescuer_Mobile_App">
-				<and mandatory="true" name="Screen">
+				<and abstract="true" mandatory="true" name="Screen">
 					<feature name="Screen_Size"/>
 					<feature name="Screen_Ratio"/>
 				</and>
@@ -21,8 +21,8 @@
 						<feature name="Bluetooth_Service"/>
 					</and>
 					<or abstract="true" mandatory="true" name="Location">
-						<feature mandatory="true" name="GPS"/>
-						<feature mandatory="true" name="Wifi_"/>
+						<feature mandatory="true" name="GPS_Outdoor"/>
+						<feature mandatory="true" name="Wifi_Indoor"/>
 					</or>
 					<or abstract="true" name="Device">
 						<feature mandatory="true" name="Accelerometer"/>
@@ -32,8 +32,9 @@
 					</or>
 				</and>
 				<alt abstract="true" mandatory="true" name="Operating_System">
-					<feature abstract="true" mandatory="true" name="Google_Android"/>
-					<feature abstract="true" mandatory="true" name="Apple_iOS"/>
+					<feature mandatory="true" name="Google_Android"/>
+					<feature mandatory="true" name="Apple_iOS"/>
+					<feature mandatory="true" name="Other_No_Samrtphone"/>
 				</alt>
 				<and abstract="true" name="Non_Functional_Requirements">
 					<feature name="Quality"/>
@@ -49,12 +50,12 @@
 					<feature mandatory="true" name="Distinguish_Situation"/>
 					<feature mandatory="true" name="Sensor_Data_Aggregation"/>
 					<and abstract="true" mandatory="true" name="Mobile_Core">
-						<or abstract="true" name="Record_Location">
+						<or abstract="true" mandatory="true" name="Record_Location">
 							<feature mandatory="true" name="Record_GPS"/>
 							<feature mandatory="true" name="Record_Wifi"/>
 						</or>
 						<feature name="Run_In_Background_Ability"/>
-						<feature name="Receive_Notifications"/>
+						<feature mandatory="true" name="Receive_Notifications"/>
 						<or abstract="true" mandatory="true" name="Coonection">
 							<feature mandatory="true" name="SMS"/>
 							<feature mandatory="true" name="Data_Connection"/>
@@ -83,7 +84,13 @@
 						<feature name="Map"/>
 					</and>
 				</and>
-				<feature name="GUI"/>
+				<alt abstract="true" mandatory="true" name="GUI">
+					<feature mandatory="true" name="Workforce"/>
+					<feature mandatory="true" name="First_Responder"/>
+					<feature mandatory="true" name="Victim"/>
+					<feature mandatory="true" name="Standard"/>
+					<feature mandatory="true" name="Witness"/>
+				</alt>
 			</and>
 		</struct>
 		<constraints/>
