@@ -3,7 +3,7 @@
 		<struct>
 			<and abstract="true" mandatory="true" name="Rescuer_Mobile_App">
 				<and abstract="true" mandatory="true" name="Hard_Sensing">
-					<and abstract="true" name="Network">
+					<and abstract="true" name="Network_Status">
 						<feature name="Cellular_Status"/>
 						<feature name="Wifi_Status"/>
 						<feature name="Bluetooth_Status"/>
@@ -28,7 +28,11 @@
 				</alt>
 				<and abstract="true" name="Non_Functional_Requirements">
 					<feature name="Quality"/>
-					<feature name="Performance"/>
+					<and name="Performance">
+						<feature name="Battery_Power_Efficiency"/>
+						<feature name="Memory_Consumption"/>
+						<feature name="CPU_Consumption"/>
+					</and>
 				</and>
 				<alt abstract="true" mandatory="true" name="GUI">
 					<feature mandatory="true" name="Profile_Workforce"/>
@@ -39,8 +43,8 @@
 				<and abstract="true" mandatory="true" name="Screen">
 					<feature name="Screen_Size"/>
 				</and>
-				<and abstract="true" mandatory="true" name="Logic">
-					<or abstract="true" mandatory="true" name="Coonection">
+				<and abstract="true" mandatory="true" name="Mobile_Phone">
+					<or abstract="true" mandatory="true" name="Network">
 						<feature mandatory="true" name="Message"/>
 						<feature mandatory="true" name="Data_Connection"/>
 						<feature mandatory="true" name="Wifi_Connection"/>
@@ -53,7 +57,7 @@
 						<feature mandatory="true" name="Record_Wifi"/>
 					</or>
 					<feature name="Run_In_Background_Ability"/>
-					<and mandatory="true" name="Receive_Information">
+					<and abstract="true" mandatory="true" name="Receive_Information">
 						<feature mandatory="true" name="Timeframe_for_Recording"/>
 						<feature name="Receive_Notification"/>
 					</and>
