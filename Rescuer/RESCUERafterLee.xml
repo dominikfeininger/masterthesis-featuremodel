@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="4">
+		<struct>
+			<and abstract="true" mandatory="true" name="RESCUER_Mobile_App">
+				<and abstract="true" mandatory="true" name="Context_Sources">
+					<feature name="Accelerometer"/>
+					<feature name="Gyroscope"/>
+					<feature mandatory="true" name="GPS"/>
+					<feature name="Compass"/>
+					<feature name="Camera"/>
+				</and>
+				<alt abstract="true" mandatory="true" name="Device">
+					<feature mandatory="true" name="Smartphone"/>
+					<feature mandatory="true" name="Phone"/>
+					<feature mandatory="true" name="Tablet"/>
+					<and mandatory="true" name="Screen_Size">
+						<feature name="h_w_1024x824"/>
+					</and>
+				</alt>
+				<alt abstract="true" mandatory="true" name="Operating_Systems">
+					<feature mandatory="true" name="Google_Android"/>
+					<feature mandatory="true" name="Apple_iOS"/>
+				</alt>
+				<alt abstract="true" mandatory="true" name="Network">
+					<and mandatory="true" name="Data">
+						<feature name="Wifi"/>
+						<feature name="Bluetooth"/>
+						<feature name="CellularData"/>
+					</and>
+					<feature mandatory="true" name="Call_and_Message"/>
+				</alt>
+				<and abstract="true" name="Persistence">
+					<feature name="File"/>
+					<feature name="Database"/>
+				</and>
+				<alt abstract="true" mandatory="true" name="GUI">
+					<feature mandatory="true" name="Workforce"/>
+					<feature mandatory="true" name="Whitness"/>
+					<feature mandatory="true" name="Standard"/>
+				</alt>
+				<feature mandatory="true" name="Data_Aggregation"/>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
