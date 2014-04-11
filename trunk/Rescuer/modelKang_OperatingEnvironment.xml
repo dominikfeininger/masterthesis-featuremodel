@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 	<featureModel chosenLayoutAlgorithm="1">
 		<struct>
-			<and abstract="true" mandatory="true" name="Operating_Environment">
-				<feature name="Base"/>
+			<and abstract="true" mandatory="true" name="Mobile_Phone">
+				<and abstract="true" name="Device">
+					<feature name="Accelerometer"/>
+					<feature name="Gyroscope"/>
+					<feature name="Camera"/>
+					<feature name="Compass"/>
+				</and>
+				<feature mandatory="true" name="Calls"/>
+				<alt abstract="true" mandatory="true" name="Netzwork">
+					<feature mandatory="true" name="Data"/>
+					<feature mandatory="true" name="WiFi"/>
+					<feature mandatory="true" name="Bluetooth"/>
+				</alt>
+				<feature mandatory="true" name="GPS"/>
+				<alt abstract="true" mandatory="true" name="Screensize">
+					<feature mandatory="true" name="_480x320"/>
+					<feature mandatory="true" name="_640_480"/>
+					<feature mandatory="true" name="_800x480"/>
+					<feature mandatory="true" name="_960x540"/>
+					<feature mandatory="true" name="_960x640"/>
+					<feature mandatory="true" name="_1136x640"/>
+					<feature mandatory="true" name="_1280x720"/>
+				</alt>
 			</and>
 		</struct>
 		<constraints/>

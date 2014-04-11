@@ -41,7 +41,15 @@
 					<feature mandatory="true" name="Profile_Witness"/>
 				</alt>
 				<and abstract="true" mandatory="true" name="Screen">
-					<feature name="Screen_Size"/>
+					<and name="Screen_Size">
+						<feature name="_480x320"/>
+						<feature name="_640x480"/>
+						<feature name="_800x480"/>
+						<feature name="_960x540"/>
+						<feature name="_960x640"/>
+						<feature name="_1136x640"/>
+						<feature name="_1280x720"/>
+					</and>
 				</and>
 				<and abstract="true" mandatory="true" name="Mobile_Phone">
 					<or abstract="true" mandatory="true" name="Network">
