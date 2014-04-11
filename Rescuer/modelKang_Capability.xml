@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 	<featureModel chosenLayoutAlgorithm="1">
 		<struct>
-			<and abstract="true" mandatory="true" name="Root">
-				<feature name="Base"/>
+			<and abstract="true" mandatory="true" name="Rescuer">
+				<and abstract="true" name="Soft_Sensing">
+					<feature name="Calendar"/>
+					<feature name="Contacts"/>
+					<feature name="Time"/>
+				</and>
+				<feature mandatory="true" name="GUI"/>
+				<feature mandatory="true" name="Profile"/>
 			</and>
 		</struct>
 		<constraints/>

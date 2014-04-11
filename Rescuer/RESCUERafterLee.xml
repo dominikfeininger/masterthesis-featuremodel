@@ -9,20 +9,12 @@
 					<feature name="Compass"/>
 					<feature name="Camera"/>
 				</and>
-				<alt abstract="true" mandatory="true" name="Device">
-					<feature mandatory="true" name="Smartphone"/>
-					<feature mandatory="true" name="Phone"/>
-					<feature mandatory="true" name="Tablet"/>
-					<and mandatory="true" name="Screen_Size">
-						<feature name="h_w_1024x824"/>
-					</and>
-				</alt>
 				<alt abstract="true" mandatory="true" name="Operating_Systems">
 					<feature mandatory="true" name="Google_Android"/>
 					<feature mandatory="true" name="Apple_iOS"/>
 				</alt>
 				<alt abstract="true" mandatory="true" name="Network">
-					<and mandatory="true" name="Data">
+					<and abstract="true" mandatory="true" name="Data">
 						<feature name="Wifi"/>
 						<feature name="Bluetooth"/>
 						<feature name="CellularData"/>
@@ -39,6 +31,20 @@
 					<feature mandatory="true" name="Standard"/>
 				</alt>
 				<feature mandatory="true" name="Data_Aggregation"/>
+				<alt abstract="true" mandatory="true" name="Device">
+					<feature mandatory="true" name="Smartphone"/>
+					<feature mandatory="true" name="Phone"/>
+					<feature mandatory="true" name="Tablet"/>
+					<or abstract="true" mandatory="true" name="Screen_Size">
+						<feature mandatory="true" name="_480_320"/>
+						<feature mandatory="true" name="_640x480"/>
+						<feature mandatory="true" name="_800x480"/>
+						<feature mandatory="true" name="_960x540"/>
+						<feature mandatory="true" name="_960x640"/>
+						<feature mandatory="true" name="_1136x640"/>
+						<feature mandatory="true" name="_1280_720"/>
+					</or>
+				</alt>
 			</and>
 		</struct>
 		<constraints/>

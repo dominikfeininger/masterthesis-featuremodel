@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 	<featureModel chosenLayoutAlgorithm="1">
 		<struct>
-			<and abstract="true" mandatory="true" name="Implementation_Technology">
-				<feature name="Base"/>
+			<and abstract="true" mandatory="true" name="Persistence">
+				<feature name="Database"/>
+				<feature name="File_System"/>
 			</and>
 		</struct>
 		<constraints/>
