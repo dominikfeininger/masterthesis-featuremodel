@@ -8,7 +8,12 @@
 					<feature name="Time"/>
 				</and>
 				<feature mandatory="true" name="GUI"/>
-				<feature mandatory="true" name="Profile"/>
+				<alt abstract="true" mandatory="true" name="Profile">
+					<feature mandatory="true" name="Workforce"/>
+					<feature mandatory="true" name="Witness"/>
+					<feature mandatory="true" name="Standard"/>
+					<feature mandatory="true" name="Observer"/>
+				</alt>
 			</and>
 		</struct>
 		<constraints/>

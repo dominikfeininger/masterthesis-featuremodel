@@ -2,7 +2,18 @@
 	<featureModel chosenLayoutAlgorithm="1">
 		<struct>
 			<and abstract="true" mandatory="true" name="Domain_Technology">
-				<feature name="Base"/>
+				<alt abstract="true" mandatory="true" name="Languarge">
+					<feature mandatory="true" name="German"/>
+					<feature mandatory="true" name="Portuguese"/>
+				</alt>
+				<and abstract="true" name="Event_Type">
+					<feature name="Indoor"/>
+					<feature name="Outdoor"/>
+				</and>
+				<alt abstract="true" mandatory="true" name="Country">
+					<feature mandatory="true" name="Brazil"/>
+					<feature mandatory="true" name="Germany"/>
+				</alt>
 			</and>
 		</struct>
 		<constraints/>
