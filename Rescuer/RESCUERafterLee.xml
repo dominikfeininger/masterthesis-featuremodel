@@ -27,13 +27,13 @@
 				</and>
 				<alt abstract="true" mandatory="true" name="GUI">
 					<feature mandatory="true" name="Workforce"/>
-					<feature mandatory="true" name="Whitness"/>
+					<feature mandatory="true" name="Witness"/>
 					<feature mandatory="true" name="Standard"/>
+					<feature mandatory="true" name="Observer"/>
 				</alt>
 				<feature mandatory="true" name="Data_Aggregation"/>
 				<alt abstract="true" mandatory="true" name="Device">
 					<feature mandatory="true" name="Smartphone"/>
-					<feature mandatory="true" name="Phone"/>
 					<feature mandatory="true" name="Tablet"/>
 					<or abstract="true" mandatory="true" name="Screen_Size">
 						<feature mandatory="true" name="_480_320"/>
