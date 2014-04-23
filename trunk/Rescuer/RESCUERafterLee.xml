@@ -8,7 +8,23 @@
 					<feature mandatory="true" name="GPS"/>
 					<feature name="Compass"/>
 					<feature name="Camera"/>
+					<feature name="Calendar"/>
+					<feature mandatory="true" name="Time"/>
 				</and>
+				<and abstract="true" name="Non_Functionals">
+					<feature name="Performance"/>
+					<feature name="Usability"/>
+					<feature name="Availability"/>
+					<feature name="Minimal_UI"/>
+					<feature name="Guaranty_Privacy"/>
+					<feature name="Low_Battery_Consumption"/>
+				</and>
+				<alt abstract="true" mandatory="true" name="GUI">
+					<feature mandatory="true" name="Workforce"/>
+					<feature mandatory="true" name="Witness"/>
+					<feature mandatory="true" name="Standard"/>
+					<feature mandatory="true" name="Observer"/>
+				</alt>
 				<alt abstract="true" mandatory="true" name="Operating_Systems">
 					<feature mandatory="true" name="Google_Android"/>
 					<feature mandatory="true" name="Apple_iOS"/>
@@ -25,16 +41,42 @@
 					<feature name="File"/>
 					<feature name="Database"/>
 				</and>
-				<alt abstract="true" mandatory="true" name="GUI">
-					<feature mandatory="true" name="Workforce"/>
-					<feature mandatory="true" name="Witness"/>
-					<feature mandatory="true" name="Standard"/>
-					<feature mandatory="true" name="Observer"/>
-				</alt>
-				<feature mandatory="true" name="Data_Aggregation"/>
-				<alt abstract="true" mandatory="true" name="Device">
-					<feature mandatory="true" name="Smartphone"/>
+				<and abstract="true" name="Implementation_Techniques">
+					<feature name="AOP"/>
+					<feature name="Service_Oriented"/>
+					<feature name="COP"/>
+					<feature name="Solution"/>
+				</and>
+				<and abstract="true" mandatory="true" name="User_Features">
+					<alt abstract="true" mandatory="true" name="Report_Situation">
+						<feature mandatory="true" name="via_Call"/>
+						<feature mandatory="true" name="via_Message"/>
+						<feature mandatory="true" name="via_Report"/>
+					</alt>
+					<feature name="Display_Map"/>
+					<feature mandatory="true" name="SetUp_PersonlaData"/>
+				</and>
+				<and abstract="true" mandatory="true" name="Operating_Environment">
+					<feature name="add_Timestamp_toSendData"/>
+					<feature name="add_deviceId_toSendData"/>
+					<feature name="add_PhotoVidoe_toMReport"/>
+					<feature name="SensorDataAggregation"/>
+					<feature name="ReceiveNotification"/>
+					<feature name="Record_Position"/>
+				</and>
+				<and abstract="true" mandatory="true" name="Device">
+					<and abstract="true" mandatory="true" name="Software">
+						<feature name="Calendar_Access"/>
+						<feature name="Camera_Access"/>
+						<feature name="Compass_Access"/>
+					</and>
+					<and abstract="true" mandatory="true" name="Hardware">
+						<feature name="Accelerometer_Access"/>
+						<feature name="GPS_Access"/>
+						<feature name="Gyroscope_Access"/>
+					</and>
 					<feature mandatory="true" name="Tablet"/>
+					<feature mandatory="true" name="Smartphone"/>
 					<or abstract="true" mandatory="true" name="Screen_Size">
 						<feature mandatory="true" name="_480_320"/>
 						<feature mandatory="true" name="_640x480"/>
@@ -43,8 +85,14 @@
 						<feature mandatory="true" name="_960x640"/>
 						<feature mandatory="true" name="_1136x640"/>
 						<feature mandatory="true" name="_1280_720"/>
+						<feature mandatory="true" name="_800x600"/>
+						<feature mandatory="true" name="_1024x600"/>
+						<feature mandatory="true" name="_1024x768"/>
+						<feature mandatory="true" name="_1280x800"/>
+						<feature mandatory="true" name="_1366x768"/>
+						<feature mandatory="true" name="_248x1536"/>
 					</or>
-				</alt>
+				</and>
 			</and>
 		</struct>
 		<constraints/>
