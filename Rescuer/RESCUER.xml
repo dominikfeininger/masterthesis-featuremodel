@@ -1,88 +1,96 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 	<featureModel chosenLayoutAlgorithm="4">
 		<struct>
-			<and abstract="true" mandatory="true" name="Rescuer_Mobile_App">
-				<and abstract="true" mandatory="true" name="Hard_Sensing">
-					<and abstract="true" name="Network_Status">
-						<feature name="Cellular_Status"/>
-						<feature name="Wifi_Status"/>
-						<feature name="Bluetooth_Status"/>
-					</and>
-					<or abstract="true" mandatory="true" name="Location">
-						<feature mandatory="true" name="GPS_Outdoor"/>
-						<feature mandatory="true" name="Wifi_Indoor"/>
-					</or>
-					<and abstract="true" name="Device">
-						<feature name="Accelerometer"/>
-						<feature name="Gyroscope"/>
-						<feature name="Compass"/>
-					</and>
+			<and abstract="true" mandatory="true" name="RESCUER_Mobile_App">
+				<and abstract="true" mandatory="true" name="Context_Sources">
+					<feature name="Accelerometer"/>
+					<feature name="Gyroscope"/>
+					<feature mandatory="true" name="GPS"/>
+					<feature name="Compass"/>
+					<feature name="Camera"/>
+					<feature name="Calendar"/>
+					<feature mandatory="true" name="Time"/>
 				</and>
-				<and abstract="true" mandatory="true" name="Soft_Sensing">
-					<feature mandatory="true" name="Time_Service"/>
-				</and>
-				<alt abstract="true" mandatory="true" name="Operating_System">
-					<feature mandatory="true" name="Google_Android"/>
-					<feature mandatory="true" name="Apple_iOS"/>
-					<feature mandatory="true" name="No_Samrtphone"/>
-				</alt>
-				<and abstract="true" name="Non_Functional_Requirements">
-					<feature name="Quality"/>
-					<and name="Performance">
-						<feature name="Battery_Power_Efficiency"/>
-						<feature name="Memory_Consumption"/>
-						<feature name="CPU_Consumption"/>
-					</and>
+				<and abstract="true" name="Non_Functionals">
+					<feature name="Performance"/>
+					<feature name="Usability"/>
+					<feature name="Availability"/>
+					<feature name="Minimal_UI"/>
+					<feature name="Guaranty_Privacy"/>
+					<feature name="Low_Battery_Consumption"/>
 				</and>
 				<alt abstract="true" mandatory="true" name="GUI">
-					<feature mandatory="true" name="Profile_Workforce"/>
-					<feature mandatory="true" name="Profile_Firtst_Responder"/>
-					<feature mandatory="true" name="Profile_Standard"/>
-					<feature mandatory="true" name="Profile_Witness"/>
+					<feature mandatory="true" name="Workforce"/>
+					<feature mandatory="true" name="Witness"/>
+					<feature mandatory="true" name="Standard"/>
+					<feature mandatory="true" name="Observer"/>
 				</alt>
-				<and abstract="true" mandatory="true" name="Screen">
-					<and name="Screen_Size">
-						<feature name="_480x320"/>
-						<feature name="_640x480"/>
-						<feature name="_800x480"/>
-						<feature name="_960x540"/>
-						<feature name="_960x640"/>
-						<feature name="_1136x640"/>
-						<feature name="_1280x720"/>
+				<alt abstract="true" mandatory="true" name="Operating_Systems">
+					<feature mandatory="true" name="Google_Android"/>
+					<feature mandatory="true" name="Apple_iOS"/>
+				</alt>
+				<alt abstract="true" mandatory="true" name="Network">
+					<and abstract="true" mandatory="true" name="Data">
+						<feature name="Wifi"/>
+						<feature name="Bluetooth"/>
+						<feature name="CellularData"/>
 					</and>
+					<feature mandatory="true" name="Call_and_Message"/>
+				</alt>
+				<and abstract="true" name="Persistence">
+					<feature name="File"/>
+					<feature name="Database"/>
 				</and>
-				<and abstract="true" mandatory="true" name="Mobile_Phone">
-					<or abstract="true" mandatory="true" name="Network">
-						<feature mandatory="true" name="Message"/>
-						<feature mandatory="true" name="Data_Connection"/>
-						<feature mandatory="true" name="Wifi_Connection"/>
-						<feature mandatory="true" name="Bluetooth"/>
-						<feature mandatory="true" name="Call"/>
-					</or>
-					<feature name="Distinguish_Situation"/>
-					<or abstract="true" mandatory="true" name="Record_Location">
-						<feature mandatory="true" name="Record_GPS"/>
-						<feature mandatory="true" name="Record_Wifi"/>
-					</or>
-					<feature name="Run_In_Background_Ability"/>
-					<and abstract="true" mandatory="true" name="Receive_Information">
-						<feature mandatory="true" name="Timeframe_for_Recording"/>
-						<feature name="Receive_Notification"/>
+				<and abstract="true" name="Implementation_Techniques">
+					<feature name="AOP"/>
+					<feature name="Service_Oriented"/>
+					<feature name="COP"/>
+					<feature name="Solution"/>
+				</and>
+				<and abstract="true" mandatory="true" name="User_Features">
+					<alt abstract="true" mandatory="true" name="Report_Situation">
+						<feature mandatory="true" name="via_Call"/>
+						<feature mandatory="true" name="via_Message"/>
+						<feature mandatory="true" name="via_Report"/>
+					</alt>
+					<feature name="Display_Map"/>
+					<feature mandatory="true" name="SetUp_PersonlaData"/>
+				</and>
+				<and abstract="true" mandatory="true" name="Operating_Environment">
+					<feature name="add_Timestamp_toSendData"/>
+					<feature name="add_deviceId_toSendData"/>
+					<feature name="add_PhotoVidoe_toMReport"/>
+					<feature name="SensorDataAggregation"/>
+					<feature name="ReceiveNotification"/>
+					<feature name="Record_Position"/>
+				</and>
+				<and abstract="true" mandatory="true" name="Device">
+					<and abstract="true" mandatory="true" name="Software">
+						<feature name="Calendar_Access"/>
+						<feature name="Camera_Access"/>
+						<feature name="Compass_Access"/>
 					</and>
-					<and abstract="true" mandatory="true" name="Display_Received_Data">
-						<feature name="Instructions"/>
-						<feature name="Map"/>
+					<and abstract="true" mandatory="true" name="Hardware">
+						<feature name="Accelerometer_Access"/>
+						<feature name="GPS_Access"/>
+						<feature name="Gyroscope_Access"/>
 					</and>
-					<and abstract="true" mandatory="true" name="Provide_Information">
-						<feature mandatory="true" name="Send_DeviceId"/>
-						<feature mandatory="true" name="Report_Situation"/>
-						<feature mandatory="true" name="Send_Notification"/>
-						<feature name="Send_Data"/>
-					</and>
-					<feature name="Sensor_Data_Aggregation"/>
-					<or abstract="true" name="Persistance">
-						<feature mandatory="true" name="Database"/>
-						<feature mandatory="true" name="File_System"/>
+					<feature mandatory="true" name="Tablet"/>
+					<feature mandatory="true" name="Smartphone"/>
+					<or abstract="true" mandatory="true" name="Screen_Size">
+						<feature mandatory="true" name="_480_320"/>
+						<feature mandatory="true" name="_640x480"/>
+						<feature mandatory="true" name="_800x480"/>
+						<feature mandatory="true" name="_960x540"/>
+						<feature mandatory="true" name="_960x640"/>
+						<feature mandatory="true" name="_1136x640"/>
+						<feature mandatory="true" name="_1280_720"/>
+						<feature mandatory="true" name="_800x600"/>
+						<feature mandatory="true" name="_1024x600"/>
+						<feature mandatory="true" name="_1024x768"/>
+						<feature mandatory="true" name="_1280x800"/>
+						<feature mandatory="true" name="_1366x768"/>
+						<feature mandatory="true" name="_2048x1536"/>
 					</or>
 				</and>
 			</and>

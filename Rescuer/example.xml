@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-	<featureModel chosenLayoutAlgorithm="4">
+	<featureModel chosenLayoutAlgorithm="0" horizontalLayout="true">
 		<struct>
-			<and abstract="true" mandatory="true" name="Rescuer_Mobile_App">
-				<and abstract="true" mandatory="true" name="Hard_Sensing">
-					<and abstract="true" name="Network_Status">
-						<feature name="Cellular_Status"/>
-						<feature name="Wifi_Status"/>
-						<feature name="Bluetooth_Status"/>
+			<and abstract="true" coordinates="246, 334" mandatory="true" name="MOBILE_APPLICATION">
+				<and abstract="true" coordinates="478, 1" mandatory="true" name="Hard_Sensing">
+					<and abstract="true" coordinates="655, -93" name="Network_Status">
+						<feature coordinates="865, -120" name="Cellular_Status"/>
+						<feature coordinates="865, -93" name="Wifi_Status"/>
+						<feature coordinates="865, -66" name="Bluetooth_Status"/>
 					</and>
-					<or abstract="true" mandatory="true" name="Location">
-						<feature mandatory="true" name="GPS_Outdoor"/>
-						<feature mandatory="true" name="Wifi_Indoor"/>
-					</or>
-					<and abstract="true" name="Device">
-						<feature name="Accelerometer"/>
-						<feature name="Gyroscope"/>
-						<feature name="Compass"/>
+					<alt abstract="true" coordinates="655, -25" mandatory="true" name="Location">
+						<feature coordinates="865, -39" mandatory="true" name="GPS_Outdoor"/>
+						<feature coordinates="865, -12" mandatory="true" name="Wi_Fi_Indoor"/>
+					</alt>
+					<and abstract="true" coordinates="655, 42" name="Navigation">
+						<feature coordinates="865, 15" name="Accelerometer"/>
+						<feature coordinates="865, 42" name="Gyroscope"/>
+						<feature coordinates="865, 69" name="Compass"/>
 					</and>
+					<feature coordinates="655, 96" name="Motionprocessor"/>
 				</and>
-				<and abstract="true" mandatory="true" name="Soft_Sensing">
-					<feature mandatory="true" name="Time_Service"/>
+				<and abstract="true" coordinates="478, 163" mandatory="true" name="Soft_Sensing">
+					<feature coordinates="655, 123" mandatory="true" name="Time"/>
+					<feature coordinates="655, 150" name="Calendar"/>
+					<feature coordinates="655, 177" name="Contacts"/>
+					<feature coordinates="655, 204" name="Social_Media"/>
 				</and>
-				<alt abstract="true" mandatory="true" name="Operating_System">
-					<feature mandatory="true" name="Google_Android"/>
-					<feature mandatory="true" name="Apple_iOS"/>
-					<feature mandatory="true" name="No_Samrtphone"/>
+				<and abstract="true" coordinates="478, 258" name="Implementation_Techniques">
+					<feature coordinates="655, 231" name="Aspect_Oriented_Programming"/>
+					<feature coordinates="655, 258" name="ServiceOriented_ContextSource_Access"/>
+					<feature coordinates="655, 285" name="Solution_Based_Development"/>
+				</and>
+				<alt abstract="true" coordinates="478, 339" mandatory="true" name="Operating_System">
+					<feature coordinates="655, 312" mandatory="true" name="Google_Android"/>
+					<feature coordinates="655, 339" mandatory="true" name="Apple_iOS"/>
+					<feature coordinates="655, 366" mandatory="true" name="Windows_Mobile"/>
 				</alt>
-				<and abstract="true" name="Non_Functional_Requirements">
-					<feature name="Quality"/>
-					<and name="Performance">
-						<feature name="Battery_Power_Efficiency"/>
-						<feature name="Memory_Consumption"/>
-						<feature name="CPU_Consumption"/>
-					</and>
+				<and abstract="true" coordinates="477, 415" mandatory="true" name="Computation">
+					<alt abstract="true" coordinates="654, 395" mandatory="true" name="Track_Location">
+						<feature coordinates="864, 382" mandatory="true" name="Track_via_GPS"/>
+						<feature coordinates="864, 409" mandatory="true" name="Track_via_Wifi"/>
+					</alt>
+					<feature coordinates="654, 436" mandatory="true" name="Sensor_Data_Computation"/>
 				</and>
-				<alt abstract="true" mandatory="true" name="GUI">
-					<feature mandatory="true" name="Profile_Workforce"/>
-					<feature mandatory="true" name="Profile_Firtst_Responder"/>
-					<feature mandatory="true" name="Profile_Standard"/>
-					<feature mandatory="true" name="Profile_Witness"/>
-				</alt>
-				<and abstract="true" mandatory="true" name="Screen">
-					<feature name="Screen_Size"/>
+				<feature abstract="true" coordinates="479, 477" mandatory="true" name="GUI"/>
+				<and abstract="true" coordinates="477, 533" name="Non_Functional_Requirements">
+					<and abstract="true" coordinates="654, 466" name="Performance">
+						<feature coordinates="864, 439" name="Battery_Power_Efficiency"/>
+						<feature coordinates="864, 466" name="Memory_Consumption"/>
+						<feature coordinates="864, 493" name="CPU_Consumption"/>
+					</and>
+					<feature coordinates="654, 497" name="Availability"/>
+					<feature coordinates="654, 524" name="Usability"/>
+					<feature coordinates="654, 551" name="Response_Time"/>
+					<feature coordinates="654, 578" name="Security"/>
 				</and>
-				<and abstract="true" mandatory="true" name="Mobile_Phone">
-					<or abstract="true" mandatory="true" name="Network">
-						<feature mandatory="true" name="Message"/>
-						<feature mandatory="true" name="Data_Connection"/>
-						<feature mandatory="true" name="Wifi_Connection"/>
-						<feature mandatory="true" name="Bluetooth"/>
-						<feature mandatory="true" name="Call"/>
-					</or>
-					<feature name="Distinguish_Situation"/>
-					<or abstract="true" mandatory="true" name="Record_Location">
-						<feature mandatory="true" name="Record_GPS"/>
-						<feature mandatory="true" name="Record_Wifi"/>
-					</or>
-					<feature name="Run_In_Background_Ability"/>
-					<and abstract="true" mandatory="true" name="Receive_Information">
-						<feature mandatory="true" name="Timeframe_for_Recording"/>
-						<feature name="Receive_Notification"/>
+				<and abstract="true" coordinates="476, 716" mandatory="true" name="Device">
+					<and abstract="true" coordinates="653, 608" mandatory="true" name="Access_Restrictions">
+						<feature coordinates="863, 554" name="Compass_Access"/>
+						<feature coordinates="863, 581" name="Accelerometer_Access"/>
+						<feature coordinates="863, 608" name="Gyroscope_Access"/>
+						<feature coordinates="863, 635" mandatory="true" name="GPS_Access"/>
+						<feature coordinates="863, 662" name="Motionprocessor_Access"/>
 					</and>
-					<and abstract="true" mandatory="true" name="Display_Received_Data">
-						<feature name="Instructions"/>
-						<feature name="Map"/>
+					<alt abstract="true" coordinates="653, 702" name="Persistance">
+						<feature coordinates="863, 689" mandatory="true" name="Database"/>
+						<feature coordinates="863, 716" mandatory="true" name="File_System"/>
+					</alt>
+					<and abstract="true" coordinates="653, 743" mandatory="true" name="Screen">
+						<feature coordinates="863, 743" mandatory="true" name="Screen_Size"/>
 					</and>
-					<and abstract="true" mandatory="true" name="Provide_Information">
-						<feature mandatory="true" name="Send_DeviceId"/>
-						<feature mandatory="true" name="Report_Situation"/>
-						<feature mandatory="true" name="Send_Notification"/>
-						<feature name="Send_Data"/>
+					<and abstract="true" coordinates="653, 824" mandatory="true" name="Network">
+						<feature coordinates="863, 770" name="Message"/>
+						<feature coordinates="863, 797" name="Data_Connection"/>
+						<feature coordinates="863, 824" name="Wifi_Connection"/>
+						<feature coordinates="863, 851" name="Bluetooth"/>
+						<feature coordinates="863, 878" mandatory="true" name="Call"/>
 					</and>
-					<feature name="Sensor_Data_Aggregation"/>
-					<or abstract="true" name="Persistance">
-						<feature mandatory="true" name="Database"/>
-						<feature mandatory="true" name="File_System"/>
-					</or>
 				</and>
 			</and>
 		</struct>
