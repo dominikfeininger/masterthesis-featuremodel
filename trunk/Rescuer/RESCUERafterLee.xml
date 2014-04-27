@@ -1,97 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-	<featureModel chosenLayoutAlgorithm="4">
+	<featureModel chosenLayoutAlgorithm="0" horizontalLayout="true">
 		<struct>
-			<and abstract="true" mandatory="true" name="RESCUER_Mobile_App">
-				<and abstract="true" mandatory="true" name="Context_Sources">
-					<feature name="Accelerometer"/>
-					<feature name="Gyroscope"/>
-					<feature mandatory="true" name="GPS"/>
-					<feature name="Compass"/>
-					<feature name="Camera"/>
-					<feature name="Calendar"/>
-					<feature mandatory="true" name="Time"/>
+			<and abstract="true" coordinates="243, 295" mandatory="true" name="RESCUER_MOBILE_APPLICATION">
+				<and abstract="true" coordinates="501, -172" mandatory="true" name="Context_Sources">
+					<feature coordinates="678, -240" name="Accelerometer"/>
+					<feature coordinates="678, -213" name="Gyroscope"/>
+					<feature coordinates="678, -186" mandatory="true" name="GPS"/>
+					<feature coordinates="678, -159" name="Compass"/>
+					<feature coordinates="678, -132" name="Camera"/>
+					<feature coordinates="678, -105" mandatory="true" name="Time"/>
 				</and>
-				<and abstract="true" name="Non_Functionals">
-					<feature name="Performance"/>
-					<feature name="Usability"/>
-					<feature name="Availability"/>
-					<feature name="Minimal_UI"/>
-					<feature name="Guaranty_Privacy"/>
-					<feature name="Low_Battery_Consumption"/>
+				<and abstract="true" coordinates="501, -37" name="Non_Functional_Requirements">
+					<feature coordinates="678, -78" name="Usability"/>
+					<feature coordinates="678, -51" name="Minimal_UI"/>
+					<feature coordinates="678, -24" name="Privacy"/>
+					<feature coordinates="678, 3" name="Battery_Life"/>
 				</and>
-				<alt abstract="true" mandatory="true" name="GUI">
-					<feature mandatory="true" name="Workforce"/>
-					<feature mandatory="true" name="Witness"/>
-					<feature mandatory="true" name="Standard"/>
-					<feature mandatory="true" name="Observer"/>
+				<alt abstract="true" coordinates="506, 70" mandatory="true" name="GUI">
+					<feature coordinates="678, 30" mandatory="true" name="Workforce"/>
+					<feature coordinates="678, 57" mandatory="true" name="Witness"/>
+					<feature coordinates="678, 84" mandatory="true" name="Observer"/>
+					<feature coordinates="678, 111" mandatory="true" name="Standard"/>
 				</alt>
-				<alt abstract="true" mandatory="true" name="Operating_Systems">
-					<feature mandatory="true" name="Google_Android"/>
-					<feature mandatory="true" name="Apple_iOS"/>
-				</alt>
-				<alt abstract="true" mandatory="true" name="Network">
-					<and abstract="true" mandatory="true" name="Data">
-						<feature name="Wifi"/>
-						<feature name="Bluetooth"/>
-						<feature name="CellularData"/>
-					</and>
-					<feature mandatory="true" name="Call_and_Message"/>
-				</alt>
-				<and abstract="true" name="Persistence">
-					<feature name="File"/>
-					<feature name="Database"/>
-				</and>
-				<and abstract="true" name="Implementation_Techniques">
-					<feature name="AOP"/>
-					<feature name="Service_Oriented"/>
-					<feature name="COP"/>
-					<feature name="Solution"/>
-				</and>
-				<and abstract="true" mandatory="true" name="User_Features">
-					<alt abstract="true" mandatory="true" name="Report_Situation">
-						<feature mandatory="true" name="via_Call"/>
-						<feature mandatory="true" name="via_Message"/>
-						<feature mandatory="true" name="via_Report"/>
+				<alt abstract="true" coordinates="503, 164" mandatory="true" name="Network">
+					<alt abstract="true" coordinates="679, 137" mandatory="true" name="Data">
+						<feature coordinates="889, 110" mandatory="true" name="Wi_Fi"/>
+						<feature coordinates="889, 137" mandatory="true" name="Bluetooth"/>
+						<feature coordinates="889, 164" mandatory="true" name="Cellular_Data"/>
 					</alt>
-					<feature name="Display_Map"/>
-					<feature mandatory="true" name="SetUp_PersonlaData"/>
+					<feature coordinates="680, 163" mandatory="true" name="Call"/>
+					<feature coordinates="680, 190" mandatory="true" name="Message"/>
+				</alt>
+				<and abstract="true" coordinates="503, 230" name="Persistence">
+					<feature coordinates="680, 217" name="File_System"/>
+					<feature coordinates="680, 244" name="Database"/>
 				</and>
-				<and abstract="true" mandatory="true" name="Operating_Environment">
-					<feature name="add_Timestamp_toSendData"/>
-					<feature name="add_deviceId_toSendData"/>
-					<feature name="add_PhotoVidoe_toMReport"/>
-					<feature name="SensorDataAggregation"/>
-					<feature name="ReceiveNotification"/>
-					<feature name="Record_Position"/>
+				<and abstract="true" coordinates="503, 284" name="Implementation_Techniques">
+					<feature coordinates="680, 271" name="ServiceOriented_ContextSource_Access"/>
+					<feature coordinates="680, 298" name="Solution_Based_Development"/>
 				</and>
-				<and abstract="true" mandatory="true" name="Device">
-					<and abstract="true" mandatory="true" name="Software">
-						<feature name="Calendar_Access"/>
-						<feature name="Camera_Access"/>
-						<feature name="Compass_Access"/>
+				<alt abstract="true" coordinates="503, 338" mandatory="true" name="Operating_Systems">
+					<feature coordinates="680, 325" mandatory="true" name="Google_Android"/>
+					<feature coordinates="680, 352" mandatory="true" name="Apple_iOS"/>
+				</alt>
+				<and abstract="true" coordinates="504, 411" mandatory="true" name="User_Features">
+					<alt abstract="true" coordinates="680, 381" mandatory="true" name="Report_Situation">
+						<feature coordinates="890, 354" mandatory="true" name="via_Call"/>
+						<feature coordinates="890, 381" mandatory="true" name="via_Message"/>
+						<feature coordinates="890, 408" mandatory="true" name="via_Report"/>
+					</alt>
+					<feature coordinates="679, 410" name="Display_Map"/>
+					<feature coordinates="678, 438" mandatory="true" name="SetUp_PersonalData"/>
+				</and>
+				<and abstract="true" coordinates="501, 547" mandatory="true" name="Operating_Environment">
+					<feature coordinates="678, 466" mandatory="true" name="add_Timestamp_toSendData"/>
+					<feature coordinates="678, 493" mandatory="true" name="add_deviceId_toSendData"/>
+					<feature coordinates="678, 520" name="add_PhotoVideo_toReport"/>
+					<feature coordinates="678, 547" name="Sensor_Data_Computing"/>
+					<feature coordinates="678, 574" name="Receive_Notification"/>
+					<feature coordinates="677, 602" name="Run_In_Background"/>
+					<feature coordinates="678, 628" mandatory="true" name="Record_Position"/>
+				</and>
+				<and abstract="true" coordinates="502, 736" mandatory="true" name="Device">
+					<alt abstract="true" coordinates="678, 656" mandatory="true" name="Screen_Size">
+						<feature coordinates="890, 463" mandatory="true" name="_640x480"/>
+						<feature coordinates="890, 490" mandatory="true" name="_800x480"/>
+						<feature coordinates="890, 517" mandatory="true" name="_960x540"/>
+						<feature coordinates="890, 544" mandatory="true" name="_960x640"/>
+						<feature coordinates="890, 571" mandatory="true" name="_1136x640"/>
+						<feature coordinates="890, 598" mandatory="true" name="_1280_720"/>
+						<feature coordinates="890, 625" mandatory="true" name="_800x600"/>
+						<feature coordinates="890, 652" mandatory="true" name="_1024x600"/>
+						<feature coordinates="890, 679" mandatory="true" name="_1024x768"/>
+						<feature coordinates="890, 706" mandatory="true" name="_1280x800"/>
+						<feature coordinates="890, 733" mandatory="true" name="_1366x768"/>
+						<feature coordinates="890, 760" mandatory="true" name="_2048x1536"/>
+					</alt>
+					<feature coordinates="677, 682" name="Tablet"/>
+					<feature coordinates="676, 711" mandatory="true" name="Smartphone"/>
+					<and abstract="true" coordinates="674, 842" mandatory="true" name="Access_Restrictions">
+						<feature coordinates="889, 787" name="Accelerometer_Access"/>
+						<feature coordinates="889, 814" name="Camera_Access"/>
+						<feature coordinates="889, 841" name="Compass_Access"/>
+						<feature coordinates="889, 868" mandatory="true" name="GPS_Access"/>
+						<feature coordinates="889, 895" name="Gyroscope_Access"/>
 					</and>
-					<and abstract="true" mandatory="true" name="Hardware">
-						<feature name="Accelerometer_Access"/>
-						<feature name="GPS_Access"/>
-						<feature name="Gyroscope_Access"/>
-					</and>
-					<feature mandatory="true" name="Tablet"/>
-					<feature mandatory="true" name="Smartphone"/>
-					<or abstract="true" mandatory="true" name="Screen_Size">
-						<feature mandatory="true" name="_480_320"/>
-						<feature mandatory="true" name="_640x480"/>
-						<feature mandatory="true" name="_800x480"/>
-						<feature mandatory="true" name="_960x540"/>
-						<feature mandatory="true" name="_960x640"/>
-						<feature mandatory="true" name="_1136x640"/>
-						<feature mandatory="true" name="_1280_720"/>
-						<feature mandatory="true" name="_800x600"/>
-						<feature mandatory="true" name="_1024x600"/>
-						<feature mandatory="true" name="_1024x768"/>
-						<feature mandatory="true" name="_1280x800"/>
-						<feature mandatory="true" name="_1366x768"/>
-						<feature mandatory="true" name="_248x1536"/>
-					</or>
 				</and>
 			</and>
 		</struct>
