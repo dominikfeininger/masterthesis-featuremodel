@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="4">
+		<struct>
+			<and abstract="true" mandatory="true" name="RescuerMobileApp">
+				<and abstract="true" mandatory="true" name="InformationGathering">
+					<and abstract="true" name="SensorDataGathering">
+						<and abstract="true" mandatory="true" name="SensorDataReading">
+							<feature mandatory="true" name="Discrete"/>
+							<feature name="Continuous"/>
+						</and>
+						<and abstract="true" mandatory="true" name="SensorDataProcessing">
+							<and abstract="true" mandatory="true" name="Position">
+								<feature name="WiFiBasedPosition"/>
+								<feature mandatory="true" name="GPSBasedPosition"/>
+								<feature name="NFCBasedPosition"/>
+							</and>
+							<feature name="Altitude"/>
+							<feature mandatory="true" name="MovementSpeed"/>
+							<feature mandatory="true" name="MovementDirection"/>
+							<feature mandatory="true" name="MovementTrack"/>
+						</and>
+						<and abstract="true" mandatory="true" name="SensorDataWriting">
+							<feature mandatory="true" name="SensorDataAnnotation"/>
+							<feature name="SensorDataMessage"/>
+						</and>
+					</and>
+					<and abstract="true" mandatory="true" name="IncidentNotification">
+						<feature mandatory="true" name="VeryQuickNotification"/>
+						<feature name="StandardNotification"/>
+					</and>
+					<and abstract="true" mandatory="true" name="IncidentReport">
+						<and abstract="true" mandatory="true" name="CrowedReport">
+							<feature name="PersonalStatus"/>
+						</and>
+						<feature name="ExpertReport"/>
+						<and abstract="true" mandatory="true" name="Attachment">
+							<feature mandatory="true" name="Image"/>
+							<feature name="Video"/>
+						</and>
+					</and>
+				</and>
+				<and abstract="true" name="FlollowUpInteraction">
+					<feature mandatory="true" name="CrowdFollowUpInteraction"/>
+					<feature name="ExpertFollowUpInteraction"/>
+				</and>
+				<and abstract="true" name="Guidance">
+					<feature mandatory="true" name="DisplayOfflineInstructions"/>
+					<feature name="DisplayMap"/>
+				</and>
+				<and abstract="true" mandatory="true" name="MobileDeviceProfile">
+					<feature mandatory="true" name="DeviceId"/>
+					<feature mandatory="true" name="Battery"/>
+					<feature mandatory="true" name="ScreenSize"/>
+					<feature mandatory="true" name="Camera"/>
+					<feature mandatory="true" name="Microphone"/>
+					<feature mandatory="true" name="Gyroscope"/>
+					<feature mandatory="true" name="Compass"/>
+					<feature mandatory="true" name="Accelerometer"/>
+					<feature name="LED"/>
+					<feature name="LightSensor"/>
+					<feature mandatory="true" name="GPS"/>
+					<alt abstract="true" mandatory="true" name="OperatingSystem">
+						<feature mandatory="true" name="GoogleAndroid"/>
+						<feature mandatory="true" name="AppleIos"/>
+						<feature mandatory="true" name="WindowsPhone"/>
+					</alt>
+					<and abstract="true" mandatory="true" name="NetworkReadness">
+						<alt mandatory="true" name="Cellular">
+							<feature mandatory="true" name="GSM"/>
+							<feature mandatory="true" name="LTE"/>
+							<feature mandatory="true" name="_3G"/>
+						</alt>
+						<feature mandatory="true" name="WiFi"/>
+						<feature name="Bluetooth"/>
+					</and>
+				</and>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
