@@ -3,12 +3,12 @@
 		<struct>
 			<and abstract="true" mandatory="true" name="RescuerMobileApp">
 				<and abstract="true" mandatory="true" name="InformationGathering">
-					<and abstract="true" name="SensorDataGathering">
-						<and abstract="true" mandatory="true" name="SensorDataReading">
+					<and abstract="true" mandatory="true" name="SensorDataGathering">
+						<and abstract="true" mandatory="true" name="SensingModus">
 							<feature mandatory="true" name="Discrete"/>
 							<feature name="Continuous"/>
 						</and>
-						<and abstract="true" mandatory="true" name="SensorDataProcessing">
+						<and abstract="true" mandatory="true" name="DirectSensing">
 							<and abstract="true" mandatory="true" name="Position">
 								<feature name="WiFiBasedPosition"/>
 								<feature mandatory="true" name="GPSBasedPosition"/>
@@ -17,16 +17,25 @@
 							<feature name="Altitude"/>
 							<feature mandatory="true" name="MovementSpeed"/>
 							<feature mandatory="true" name="MovementDirection"/>
-							<feature mandatory="true" name="MovementTrack"/>
+							<feature mandatory="true" name="CompassOrientation"/>
+							<feature mandatory="true" name="GyroscopeOriantation"/>
+							<feature mandatory="true" name="DisplayOrientation"/>
+							<feature mandatory="true" name="DeviceAcceleration"/>
 						</and>
-						<and abstract="true" mandatory="true" name="SensorDataWriting">
-							<feature mandatory="true" name="SensorDataAnnotation"/>
-							<feature name="SensorDataMessage"/>
+						<feature abstract="true" mandatory="true" name="SensorDataWriting"/>
+						<feature name="SensorStreaming"/>
+						<feature mandatory="true" name="SensorDataAnnotation"/>
+						<and mandatory="true" name="IndirectSensing">
+							<feature mandatory="true" name="MovementTrack"/>
+							<feature name="DeviceLocation"/>
 						</and>
 					</and>
 					<and abstract="true" mandatory="true" name="IncidentNotification">
-						<feature mandatory="true" name="VeryQuickNotification"/>
-						<feature name="StandardNotification"/>
+						<and abstract="true" mandatory="true" name="SmartNotification">
+							<feature name="StandardNotification"/>
+							<feature mandatory="true" name="VeryQuickNotification"/>
+						</and>
+						<feature name="SMSNotification"/>
 					</and>
 					<and abstract="true" mandatory="true" name="IncidentReport">
 						<and abstract="true" mandatory="true" name="CrowedReport">
@@ -36,6 +45,10 @@
 						<and abstract="true" mandatory="true" name="Attachment">
 							<feature mandatory="true" name="Image"/>
 							<feature name="Video"/>
+						</and>
+						<and abstract="true" mandatory="true" name="SendData">
+							<feature name="TimestampAnnotation"/>
+							<feature name="DeviceIdAnnotation"/>
 						</and>
 					</and>
 				</and>
